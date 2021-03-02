@@ -87,7 +87,7 @@ def count_repeats(xs, x):
 
 def _greater_than_x(xs, x):
     '''
-    Uses binary search to find highest index with a value >= x
+    Uses binary search to find highest index with a value >= x.
 
     >>> _greater_than_x([5,3,3,3,2,1], 3)
     1
