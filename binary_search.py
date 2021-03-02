@@ -37,9 +37,9 @@ def find_smallest_positive(xs):
         else:
             return 0
 
-    mid = len(xs)//2
+    mid = len(xs) // 2
     if xs[mid] >= 0:
-        if xs[mid-1] > 0:
+        if xs[mid - 1] > 0:
             return find_smallest_positive(xs[:mid])
         else:
             index = find_smallest_positive(xs[mid:])
@@ -115,11 +115,11 @@ def _greater_than_x(xs, x):
             return 0
         return 0
 
-    mid = len(xs)//2
+    mid = len(xs) // 2
 
     # mid index value is num target
     if xs[mid] <= x:
-        if xs[mid] == x and xs[mid-1] > x:
+        if xs[mid] == x and xs[mid - 1] > x:
             return mid
         return _greater_than_x(xs[:mid], x)
     else:
@@ -144,13 +144,13 @@ def _less_than_x(xs, x):
             return 1
         return 0
 
-    mid = len(xs)//2
+    mid = len(xs) // 2
 
     if xs[mid] >= x:          # right side of arr
         index = _less_than_x(xs[mid:], x)
         return mid + index
     elif xs[mid] < x:         # left side
-        if xs[mid-1] == x:
+        if xs[mid - 1] == x:
             return mid
         else:
             index = _less_than_x(xs[:mid], x)
@@ -200,8 +200,8 @@ def argmin(f, lo, hi, epsilon=1e-3):
     >>> argmin(lambda x: (x-5)**2, -20, 0)
     -0.00016935087808430278
     '''
-    m1 = lo + (hi-lo) / 3
-    m2 = lo + (2*(hi-lo)) / 3
+    m1 = lo + (hi - lo) / 3
+    m2 = lo + (2 * (hi - lo)) / 3
 
     if hi - lo < epsilon:
         return hi
@@ -236,7 +236,7 @@ def find_boundaries(f):
     '''
     lo = -1
     hi = 1
-    mid = (lo+hi)/2
+    mid = (lo + hi) / 2
     if f(lo) > f(mid):
         lo *= 2
     elif f(hi) < f(mid):
